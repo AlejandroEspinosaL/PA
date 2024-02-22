@@ -1,34 +1,37 @@
-def dist_l1(U,V):
-    disttax=0
-        for i in range (len(U)):
-            disttax += abs(U[i]-V[i])
-    return (disttax)
+U = [ 1 , 2, 4 ]
+V = [ 4 , 7, 10 ]
+
+
+def dist_l1(U, V):
+    dist_tax = 0
+    for i in range(len(U)):
+        dist_tax += abs(U[i]-V[i])
+    return (dist_tax)
 
 def dist_l2(U,V):
-    distecul=0
-        for i in range (len(U))
-        distecul += ((U[i]-V[i])**2)**0.5
-    return (distecul)
+    dist_ecul=0
+    for i in range (len(U)):
+        dist_ecul += ((U[i]-V[i])**2)
+    return (dist_ecul**0.5)
 
 def dist_linf(U,V):
-    distinf=0
-        for i in range (len(U))
-        distinf = max(distinf,(U[i]-V[i]))
-    return (distinf)
+    dist_inf=0
+    for i in range (len(U)):
+        dist_inf = max(dist_inf,abs(U[i]-V[i]))
+    return (dist_inf)
 
 def promedio(U):
     miu=0
-        for i in range (len(U))
+    for i in range (len(U)):
         miu += U[i]
-    return (miu/ len(U))
+    return (miu/len(U))
 
 def Desv_est(U):
     lam=0
     prom= promedio(U)
-        for i in range (len(U))
-        lam += U[i]-prom
-    return ((lam/ len(U))**0.5)
+    for i in range (len(U)):
+        lam += (U[i]-prom)**2
+    return ((lam/len(U))**0.5)
 
 def varianza(U):
-    var= Desv_est(U)
-    return (var**0.5)
+    return (Desv_est(U) ** 2)
